@@ -27,9 +27,12 @@ public class StudentService : IStudentService
         return student.Id;
     }
 
-    public Task<List<Student>> GetAllAsync()
+    public async Task<(List<Student> Items, int TotalCount)> GetPagedAsync(int page, int pageSize)
     {
-        throw new NotImplementedException();
+        if (page <= 0) page = 1;
+        if (pageSize <= 0) pageSize = 10;
+
+        return await _repository.GetPagedAsync(page, pageSize);
     }
 
     public Task<Student?> GetByIdAsync(Guid id)

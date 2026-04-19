@@ -42,4 +42,18 @@ public class Repository<T> : IRepository<T> where T : class
     {
         return await _dbSet.ToListAsync();
     }
+
+    public async Task<(List<T> Items, int TotalCount)> GetPagedAsync(int page, int pageSize)
+    {
+        var query = _dbSet.AsQueryable();
+
+        var totalCount = await query.CountAsync();
+
+        var items = await query
+            .Skip((page - 1) * pageSize)
+            .Take(pageSize)
+            .ToListAsync();
+
+        return (items, totalCount);
+    }
 }

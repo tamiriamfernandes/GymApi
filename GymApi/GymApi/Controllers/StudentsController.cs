@@ -23,10 +23,19 @@ public class StudentsController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetAll()
+    public async Task<IActionResult> GetPaged(
+        [FromQuery] int page = 1,
+        [FromQuery] int pageSize = 10)
     {
-        var students = await _studentService.GetAllAsync();
-        return Ok(students);
+        var result = await _studentService.GetPagedAsync(page, pageSize);
+
+        return Ok(new
+        {
+            data = result.Items,
+            total = result.TotalCount,
+            page,
+            pageSize
+        });
     }
 
     [HttpGet("{id:guid}")]

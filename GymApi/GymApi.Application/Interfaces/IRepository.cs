@@ -8,4 +8,5 @@ public interface IRepository<T> where T : class
 
     Task<T?> GetByIdAsync(Guid id);
     Task<List<T>> GetAllAsync();
+    Task<(List<T> Items, int TotalCount)> GetPagedAsync(int page, int pageSize);
 }
