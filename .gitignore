@@ -5,3 +5,7 @@
 /GymApi/.vs
 /GymApi/GymApi/bin/Debug/net10.0
 /GymApi/GymApi/obj
+/GymApi/GymApi.Infrastructure/bin/Debug/net10.0
+/GymApi/GymApi.Infrastructure/obj
+/GymApi/GymApi.Domain/bin/Debug/net10.0
+/GymApi/GymApi.Domain/obj
