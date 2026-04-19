@@ -1,5 +1,6 @@
 using Microsoft.OpenApi;
 using GymApi.Infrastructure;
+using GymApi.Application;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,7 +10,8 @@ builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
-builder.Services.AddInfrastructure(builder.Configuration);
+builder.Services.AddApplication()
+                .AddInfrastructure(builder.Configuration);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>

@@ -23,6 +23,7 @@ public class StudentConfiguration : IEntityTypeConfiguration<Student>
             .HasMaxLength(150);
 
         builder.Property(x => x.BirthDate)
+            .HasColumnType("date")
             .IsRequired();
 
         // Enum como string (melhor pra leitura no banco 👀)
