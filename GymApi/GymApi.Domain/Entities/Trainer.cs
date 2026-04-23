@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace GymApi.Domain.Entities;
@@ -8,6 +9,7 @@ public class Trainer
 {
     public Guid Id { get; private set; }
 
+    [StringLength(100, MinimumLength = 1)]
     public string Name { get; private set; } = default!;
     public string? RegistrationNumber { get; private set; } // ex: CREF
 
