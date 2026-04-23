@@ -33,5 +33,17 @@ namespace GymApi.Application.Services
 
             return await _repository.GetPagedAsync(page, pageSize);
         }
+
+        public async Task<Guid> UpdateAsync(Trainer trainer)
+        {
+            await _repository.UpdateAsync(trainer);
+
+            return trainer.Id;
+        }
+
+        public async Task<Trainer> GetByIdAsync(Guid id)
+        {
+            return await _repository.GetByIdAsync(id);
+        }
     }
 }

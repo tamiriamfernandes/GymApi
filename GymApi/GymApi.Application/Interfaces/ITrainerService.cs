@@ -10,5 +10,7 @@ namespace GymApi.Application.Interfaces
     {
         Task<Guid> CreateAsync(CreateTrainerDto dto);
         Task<(List<Trainer> Items, int TotalCount)> GetPagedAsync(int page, int pageSize);
+        Task<Guid> UpdateAsync(Trainer trainer);
+        Task<Trainer> GetByIdAsync(Guid id);
     }
 }

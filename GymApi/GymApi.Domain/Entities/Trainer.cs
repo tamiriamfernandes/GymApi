@@ -30,10 +30,12 @@ public class Trainer
         RegistrationNumber = registrationNumber;
     }
 
-    public void UpdateInfo(string name, string? registrationNumber)
+    public Trainer UpdateInfo(string name, string? registrationNumber)
     {
         Name = name;
         RegistrationNumber = registrationNumber;
+
+        return this;
     }
 
     public void LinkUser(Guid userId)
