@@ -16,8 +16,7 @@ public class Student
     public Guid? UserId { get; private set; }
     // public User? User { get; private set; }
 
-    // navigation
-    //public ICollection<Workout> Workouts { get; private set; } = new List<Workout>();
+    public ICollection<Workout> Workouts { get; private set; } = new List<Workout>();
 
     // EF Core
     protected Student() { }

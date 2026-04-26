@@ -18,7 +18,7 @@ public class Trainer
     //public User? User { get; private set; }
 
     // navegação
-    //public ICollection<Workout> Workouts { get; private set; } = new List<Workout>();
+    public ICollection<Workout> Workouts { get; private set; } = new List<Workout>();
 
     // EF Core
     protected Trainer() { }

@@ -16,5 +16,7 @@ public class GymDbContext : DbContext
         base.OnModelCreating(modelBuilder);
 
         modelBuilder.Entity<Student>();
+        modelBuilder.Entity<Trainer>();
+        modelBuilder.Entity<Workout>();
     }
 }
