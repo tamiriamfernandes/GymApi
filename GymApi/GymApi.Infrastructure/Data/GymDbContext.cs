@@ -10,6 +10,8 @@ public class GymDbContext : DbContext
         
     }
 
+    public DbSet<Exercise> Exercises => Set<Exercise>();
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(GymDbContext).Assembly);
@@ -18,5 +20,6 @@ public class GymDbContext : DbContext
         modelBuilder.Entity<Student>();
         modelBuilder.Entity<Trainer>();
         modelBuilder.Entity<Workout>();
+        modelBuilder.Entity<Exercise>();
     }
 }
