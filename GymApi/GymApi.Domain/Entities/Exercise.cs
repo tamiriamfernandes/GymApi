@@ -18,6 +18,7 @@ public class Exercise
     public bool IsActive { get; private set; }
     public DateTime CreatedAt { get; private set; }
     public DateTime? UpdatedAt { get; private set; }
+    public ICollection<ExerciseExecution> ExerciseExecutions { get; private set; } = new List<ExerciseExecution>();
 
     protected Exercise() { }
 

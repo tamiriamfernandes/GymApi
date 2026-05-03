@@ -18,11 +18,6 @@ public class ExercisesController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] CreateExerciseDto dto)
     {
-        if (!ModelState.IsValid)
-        {
-            return BadRequest(ModelState);
-        }
-
         try
         {
             var id = await _exerciseService.CreateAsync(dto);
@@ -41,11 +36,6 @@ public class ExercisesController : ControllerBase
     [HttpPut("{id:guid}")]
     public async Task<IActionResult> Update([FromRoute] Guid id, [FromBody] UpdateExerciseDto dto)
     {
-        if (!ModelState.IsValid)
-        {
-            return BadRequest(ModelState);
-        }
-
         try
         {
             await _exerciseService.UpdateAsync(id, dto);

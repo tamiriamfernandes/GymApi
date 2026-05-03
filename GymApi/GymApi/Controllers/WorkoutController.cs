@@ -18,9 +18,6 @@ public class WorkoutController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] CreateWorkoutDto dto)
     {
-        if (!ModelState.IsValid)
-            return BadRequest(ModelState);
-
         var id = await _workoutService.CreateAsync(dto);
         return Created("Created", new { id });
     }
@@ -45,9 +42,6 @@ public class WorkoutController : ControllerBase
     [HttpPut("{id:guid}")]
     public async Task<IActionResult> Update([FromRoute] Guid id, [FromBody] UpdateWorkoutDto dto)
     {
-        if (!ModelState.IsValid)
-            return BadRequest(ModelState);
-
         await _workoutService.UpdateAsync(id, dto);
 
         return NoContent();
@@ -56,9 +50,6 @@ public class WorkoutController : ControllerBase
     [HttpPatch("{id:guid}/activate")]
     public async Task<IActionResult> Activate([FromRoute] Guid id)
     {
-        if (!ModelState.IsValid)
-            return BadRequest(ModelState);
-
         await _workoutService.ActivateAsync(id);
 
         return NoContent();
@@ -67,10 +58,7 @@ public class WorkoutController : ControllerBase
     [HttpPatch("{id:guid}/deactivate")]
     public async Task<IActionResult> Deactivate([FromRoute] Guid id)
     {
-        if (!ModelState.IsValid)
-            return BadRequest(ModelState);
-
-        await _workoutService.ActivateAsync(id);
+        await _workoutService.DeactivateAsync(id);
 
         return NoContent();
     }

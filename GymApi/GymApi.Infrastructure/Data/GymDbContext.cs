@@ -11,6 +11,8 @@ public class GymDbContext : DbContext
     }
 
     public DbSet<Exercise> Exercises => Set<Exercise>();
+    public DbSet<WorkoutExecution> WorkoutExecutions => Set<WorkoutExecution>();
+    public DbSet<ExerciseExecution> ExerciseExecutions => Set<ExerciseExecution>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -21,5 +23,7 @@ public class GymDbContext : DbContext
         modelBuilder.Entity<Trainer>();
         modelBuilder.Entity<Workout>();
         modelBuilder.Entity<Exercise>();
+        modelBuilder.Entity<WorkoutExecution>();
+        modelBuilder.Entity<ExerciseExecution>();
     }
 }

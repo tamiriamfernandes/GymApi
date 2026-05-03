@@ -16,6 +16,7 @@ public class Workout
     public Student Student { get; set; }
     public Trainer Trainer { get; set; }
     public ICollection<Exercise> Exercises { get; private set; } = new List<Exercise>();
+    public ICollection<WorkoutExecution> WorkoutExecutions { get; private set; } = new List<WorkoutExecution>();
 
     public Workout()
     {

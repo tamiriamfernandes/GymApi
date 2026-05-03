@@ -1,3 +1,4 @@
+using FluentValidation.AspNetCore;
 using Microsoft.OpenApi;
 using GymApi.Infrastructure;
 using GymApi.Application;
@@ -7,6 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
+builder.Services.AddFluentValidationAutoValidation();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 

@@ -18,9 +18,6 @@ public class TrainersController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] CreateTrainerDto dto)
     {
-        if (!ModelState.IsValid)
-            return BadRequest(ModelState);
-
         var id = await _trainerService.CreateAsync(dto);
         return Ok(new { id });
     }
@@ -55,9 +52,6 @@ public class TrainersController : ControllerBase
     [HttpPut]
     public async Task<IActionResult> Update([FromBody] UpdateTrainerDto dto)
     {
-        if (!ModelState.IsValid)
-            return BadRequest(ModelState);
-
         var trainer = await _trainerService.GetByIdAsync(dto.Id);
 
         if (trainer == null)

@@ -1,5 +1,4 @@
 ﻿using GymApi.Domain.Enums;
-using System.ComponentModel.DataAnnotations;
 
 namespace GymApi.Application.DTOs;
 

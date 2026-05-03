@@ -17,6 +17,7 @@ public class Student
     // public User? User { get; private set; }
 
     public ICollection<Workout> Workouts { get; private set; } = new List<Workout>();
+    public ICollection<WorkoutExecution> WorkoutExecutions { get; private set; } = new List<WorkoutExecution>();
 
     // EF Core
     protected Student() { }
