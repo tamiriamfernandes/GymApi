@@ -37,6 +37,6 @@ public class StudentService : IStudentService
 
     public Task<Student?> GetByIdAsync(Guid id)
     {
-        throw new NotImplementedException();
+        return _repository.GetByIdAsync(id);
     }
 }
